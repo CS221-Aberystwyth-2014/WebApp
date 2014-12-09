@@ -7,6 +7,10 @@
             > Login
     - Included by every page
 -->
+<?php 
+require_once("../include/php/connect.php");
+require_once("../include/php/session.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,9 +31,16 @@
                 <li>
                     <a href="../reserves/index.php">Reserves</a>
                 </li>
+                <?php if(!isset($_SESSION['uid'])) {?>
                 <li>
                     <a href="../login/index.php">Login</a>
                 </li>
+                <?php } else { ?>
+                <li>
+                    <a href="../login/index.php?logout=true">Log Out</a>
+                </li>
+                <?php } ?>
+                
             </ul>
         </nav>
     </header>
