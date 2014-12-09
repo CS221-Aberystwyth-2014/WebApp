@@ -9,28 +9,54 @@
      before being sent to the database
 -->
 
-<?php require_once("../include/header.php"); ?>
+<?php 
+require_once("../include/header.php");
+
+if(isset($_GET['id'])) {
+    $id = htmlentities(strip_tags($_GET['id']));
+}
+
+?>
 
     <section>
-        <form>
-            <p>This will be the form the admin sees when the login to edit, add, update or delete the reserves.</p>
-            Reserve Name
-            <p>
-            <input type="text" name="reserveName">
-            </p>
-            <br>
-            Location
-            <p>
-            <input type="text" name="location">
-            </p>
-            <br>
-            Description
-            <p>
-            <input type="textarea" name="description">
-            </p>
-            <br>
-            <input type="submit" value="Update">
-        </form>
+        <div class="section_header">
+            <div class="section_header_text">
+                Editing Reserve <?php echo $id; ?>
+            </div>
+        </div>
+        <div class="section_body">
+            <div class="section_body_text">
+                <?php 
+                $query = "SELECT * FROM reserves WHERE rsv_id = $id";
+                $result = mysqli_query($connection, $query);
+                
+                if($result) {
+                    $row = mysqli_fetch_assoc($result);
+                }
+                ?>
+            
+                <center>
+                    <form method="POST" action="edit.php">
+                        Reserve Name
+                        <p>
+                        <input type="text" id="reserveName" name="reserveName" value="<?php echo $row['rsv_name']; ?>">
+                        </p>
+                        <br>
+                        Location
+                        <p>
+                        <input type="text" id="location" name="location" value="<?php echo $row['rsv_loc']; ?>">
+                        </p>
+                        <br>
+                        Description
+                        <p>
+                        <input type="textarea" id="description" name="description" value="<?php echo $row['rsv_desc']; ?>">
+                        </p>
+                        <br>
+                        <input type="submit" id="submit" name="submit" value="Update">
+                    </form>
+                </center>
+            </div>
+        </div>
     </section>
 
 <?php require_once("../include/footer.php"); ?>

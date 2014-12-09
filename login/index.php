@@ -21,7 +21,7 @@ if(isset($_GET['logout'])) {
 }
 
 $password = '123';
-$username = 'Admin';
+$username = 'ADMIN';
 ?>
 
     <section>
@@ -35,7 +35,7 @@ $username = 'Admin';
                 <center>
                 <?php 
                 if(isset($_POST['submit'])) {
-                    $providedUsername = htmlentities(strip_tags($_POST['login']));
+                    $providedUsername = strtoupper(htmlentities(strip_tags($_POST['login'])));
                     $providedPassword = htmlentities($_POST['password']);
                 
                     if($providedUsername != $username || $providedPassword != $password) {

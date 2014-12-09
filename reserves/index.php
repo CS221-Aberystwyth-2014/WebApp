@@ -21,35 +21,45 @@
                 <th>Reserve Name</th>
                 <th>Location</th>
                 <th>Description</th>
+                <?php if(isset($_SESSION['uid'])) { ?>
                 <th>Options</th>
+                <?php } ?>
             </tr>
             <tr>
                 <td>123</td>
                 <td>Aberystwyth Reserve</td>
                 <td>53.66,1.01</td>
                 <td>Wet, Green</td>
-                <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                <?php if(isset($_SESSION['uid'])) { ?>
+                <td><a href="edit.php?id=1">Edit</a> | <a href="#">Delete</a></td>
+                <?php } ?>
             </tr>
             <tr>
                 <td>124</td>
                 <td>Borth Reserve</td>
                 <td>40.21, 2.33</td>
                 <td>Lots of leaves</td>
-                <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                <?php if(isset($_SESSION['uid'])) { ?>
+                <td><a href="edit.php?id=2">Edit</a> | <a href="#">Delete</a></td>
+                <?php } ?>
             </tr>
             <tr>
                 <td>125</td>
                 <td>Slough Reserve</td>
                 <td>35.34, -7.25</td>
                 <td>Vibrant colours</td>
-                <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                <?php if(isset($_SESSION['uid'])) { ?>
+                <td><a href="edit.php?id=3">Edit</a> | <a href="#">Delete</a></td>
+                <?php } ?>
             </tr>
             <tr>
                 <td>126</td>
                 <td>Abermad Reserve</td>
                 <td>52.30, -4.20</td>
                 <td>Sloppy ground</td>
-                <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                <?php if(isset($_SESSION['uid'])) { ?>
+                <td><a href="edit.php?id=4">Edit</a> | <a href="#">Delete</a></td>
+                <?php } ?>
             </tr>
         </table>
         <br>

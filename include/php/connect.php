@@ -1,7 +1,7 @@
 <?php 
     $dbhost = "db.dcs.aber.ac.uk";
     $dbuser = "pjn";
-    $dbpass = "********";
+    $dbpass = "8By65h7o4m!";
     $dbname = "pjn";
     
     // Open connection to the database

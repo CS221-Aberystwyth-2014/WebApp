@@ -8,7 +8,7 @@
     <section>
         <div class="section_header">
             <div class="section_header_text">
-                Welcome to the Plant Database Website, <?php echo $_SESSION['uid']; ?>!
+                Welcome to the Plant Database Website <?php echo $_SESSION['uid']; ?>!
             </div>
         </div>
         <div class="section_body">
