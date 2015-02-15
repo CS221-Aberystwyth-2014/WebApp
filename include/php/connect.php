@@ -1,8 +1,8 @@
 <?php 
-    $dbhost = "db.dcs.aber.ac.uk";
-    $dbuser = "pjn";
-    $dbpass = "*****";
-    $dbname = "pjn";
+    $dbhost = "host";
+    $dbuser = "user";
+    $dbpass = "***";
+    $dbname = "name";
     
     // Open connection to the database
     $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);

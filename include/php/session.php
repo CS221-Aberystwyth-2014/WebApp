@@ -1,7 +1,12 @@
-<!-- SESSION.php [include/php/fetch_data.php]
-   - No visual aspect. This file contains variables and other php code to do with the users saved session data
-   - Included by every page
--->
-<?php 
+<?php  
+    // Set the save path for sessions 
+    session_save_path("/aber/pjn/web/tmp");
+
     session_start();
+
+    if(!isset($_SESSION['uid'])) {
+        // Make session last for 7 days
+        ini_set('session.cookie_lifetime', 60 * 60 * 24 * 7);
+        session_regenerate_id();
+    }
 ?>
