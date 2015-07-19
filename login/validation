@@ -1,0 +1,19 @@
+<DOCTYPE HTML>
+<html>
+<body>
+<?php 
+$password = '123';
+$username = 'username';
+if($_POST["login"] != $username || $_POST["password"] != $password){
+echo '<script language="javascript">';
+echo 'alert("Username or password are incorrect")';
+echo '</script>';
+}
+?>
+
+<?php
+if ($_POST["password"] == $password && $_POST["login"] == $username){
+echo 'thank you for logging in';}
+?>
+</body>
+</html>
